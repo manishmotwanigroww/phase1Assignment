@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=s, initial-scale=1.0" />
+    <title>Foundation Phase</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="root">
+      <h1>Foundation of Web Development</h1>
+
+      <form onsubmit="return onSubmit(event)" id="myForm" name="form">
+        <div class="container">
+          <table class="subContainer">
+            <tr>
+              <td>First Name</td>
+              <td>
+                <input
+                  type="text"
+                  id="firstName"
+                  class="textInput"
+                  placeholder="enter first name"
+                  autofocus
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Last Name</td>
+              <td>
+                <input
+                  type="text"
+                  id="lastName"
+                  class="textInput"
+                  class="textInput"
+                  placeholder="enter last name"
+                />
+              </td>
+            </tr>
+            <tr class="size2">
+              <td>Gender</td>
+              <td>
+                <input
+                  type="radio"
+                  id="male"
+                  value="male"
+                  name="gender"
+                  class="gender"
+                />
+                  <label for="male">Male</label>
+                <input
+                  type="radio"
+                  id="female"
+                  value="female"
+                  name="gender"
+                  class="gender"
+                />
+                  <label for="female">Female</label>
+              </td>
+            </tr>
+            <tr id="maritalStatus" class="size2">
+              <td>Marital Status</td>
+              <td>
+                <input
+                  type="radio"
+                  id="married"
+                  value="married"
+                  onClick="handleMaritalStatus()"
+                  name="maritalStatus"
+                  class="maritalStatus"
+                />
+                  <label for="married">Married</label>
+                <input
+                  type="radio"
+                  id="unmarried"
+                  value="unmarried"
+                  onClick="handleMaritalStatus()"
+                  name="maritalStatus"
+                  class="maritalStatus"
+                />
+                  <label for="unmarried">Unmarried</label>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Name of Spouse</td>
+              <td>
+                <input
+                  type="text"
+                  id="spouseName"
+                  class="textInput"
+                  placeholder="spouse name (without spaces)"
+                  disabled="true"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Order Details</td>
+              <td>
+                <input
+                  type="text"
+                  id="orderDetails"
+                  class="textInput"
+                  placeholder="enter order details  "
+                />
+              </td>
+            </tr>
+
+            <tr class="size2">
+              <td>
+                <input type="checkbox" name="terms" id="termsConditions" />
+                <label for="terms"
+                  >I accept the
+                  <a href="/terms">Terms and Conditons</a>
+                </label>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="buttonGroup">
+                <button class="button" onclick="resetForm()">Reset</button>
+                <button class="button" type="submit" value="Submit">
+                  Submit
+                </button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </form>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
