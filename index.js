@@ -9,7 +9,10 @@ function whiteSpaces(value) {
 function checkTerms() {
   let termsCheck = document.getElementById("termsConditions").checked;
   if (termsCheck == false) {
-    alert("Please Accept The Terms and Conditions");
+    error.textContent = "Please Accept The Terms and Conditions";
+    error.style.color = "red";
+    error.style.backgroundColor = "#ff9194";
+
     return false;
   }
   return true;
@@ -20,6 +23,8 @@ function onSubmit(e) {
 
   let inputs = document.getElementById("myForm").getElementsByTagName("input");
 
+  var error = document.getElementById("error");
+
   var checks = true;
   for (let i = 0; i < inputs.length; i++) {
     if (
@@ -28,22 +33,28 @@ function onSubmit(e) {
       (inputs[i].id == "spouseName" && inputs[i].value != "")
     ) {
       if (whiteSpaces(inputs[i].value)) {
-        alert(inputs[i].id + " can't contain any white spaces");
+        error.textContent = inputs[i].id + " can't contain any white spaces";
+        error.style.color = "red";
+        error.style.backgroundColor = "#ff9194";
+
         checks = false;
         break;
       }
     } else if (inputs[i].id == "spouseName" && inputs[i].disabled == true) {
       continue;
     } else if (inputs[i].value == "") {
-      alert(inputs[i].id + " can't be empty");
+      error.textContent = inputs[i].id + " can't be empty";
+      error.style.color = "white";
+      error.style.backgroundColor = "#ff9194";
       checks = false;
       break;
     }
   }
 
   if (checks == true && checkTerms()) {
-    alert("Thanks For The Response");
-    window.location.reload();
+    error.textContent = "Form Submitted Successfully!!";
+    error.style.color = "white";
+    error.style.backgroundColor = "#83f28f";
   }
 }
 
